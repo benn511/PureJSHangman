@@ -4,17 +4,15 @@ class Hangman {
     this.numLives = 6;
     this.guesses = [];
     this.gameWords = [
-      "hello world",
-      "python",
-      "ruby",
-      "axiom",
-      "notation",
-      "develop",
-      "cashews",
-      "jazz"
+      "HELLO WORLD",
+      "RUBY",
+      "PYTHON",
+      "JAVA",
+      "INTERVIEW",
+      "JAZZ",
+      "TRY ME",
     ];
-    this.word = "hello world";
-    // this.word = this.gameWords[this.getRandomIndex()];
+    this.word = this.gameWords[this.getRandomIndex()];
   }
   getWord() {
     return this.word;
@@ -32,6 +30,7 @@ class Hangman {
     return `Currently guessing: ${this.word}, Current lives:${this.numLives}, Guesses include ${this.guesses}`;
   }
   checkLetter(letter) {
+    letter = letter.toUpperCase();
     if (this.guesses.indexOf(letter) == -1) {
       //if new guess
       if (this.word.indexOf(letter) == -1) {
@@ -52,11 +51,12 @@ class Hangman {
   }
   dispMsg() {
     if (this.numGuesses() == 0) {
-      startMsg.innerHTML = "Press any key to continue";
+      startMsg.innerHTML = "Press any letter to begin guessing!";
+      lives.innerHTML = "";
     } else {
       startMsg.innerHTML = "";
+      lives.innerHTML = `Num lives: ${this.numLives}`;
     }
-    lives.innerHTML = `Num lives: ${this.numLives}`;
   }
   dispAnswer() {
     showAnswer(this.word);

@@ -16,8 +16,7 @@ const toggleLoseMsg = () => {
 
 //Function: Updates current state of the game in string format. Unguessed letters are = "_ ", Guessed letters are represented by themselves e.g. "j" = "j" . Empty space between words is represented with an "*".
 const updateGameText = (word, guesses) => {
-  //Init var
-  let updatedString = "";
+  let updatedString = ""; //Init var
   for (const letter of word) {
     if (letter == " ") {
       updatedString += "* "; //Empty space
@@ -28,10 +27,11 @@ const updateGameText = (word, guesses) => {
     }
   }
   current.innerHTML = updatedString;
-  alphabet.innerHTML = guesses;
+  alphabet.innerHTML = "Current guesses: " + guesses;
+  console.log(guesses);
 };
 
-const showAnswer = word => {
+const showAnswer = (word) => {
   if (word) {
     current.innerHTML = word;
   }
