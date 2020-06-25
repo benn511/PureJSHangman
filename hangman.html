@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hangman</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="hangman.css" />
+  </head>
+  <body>
+    <main>
+      <div id="stats">
+        <h1 class="game-text" id="lives"></h1>
+        <h1 class="game-text" id="alphabet"></h1>
+        <h1 class="game-text" id="length"></h1>
+        <h1 class="game-text" id="start"></h1>
+        <div class="alert alert-success" role="alert">
+          You win!
+        </div>
+        <div class="alert alert-danger" role="alert">
+          You lose!
+        </div>
+      </div>
+      <div id="game">
+        <h1 class="game-text" id="game-title">Hangman</h1>
+        <canvas id="canvas" width="600" height="600"></canvas>
+        <h1 class="game-text" id="current">_ _ _ _</h1>
+      </div>
+    </main>
+  </body>
+  <script src="./static/draw.js"></script>
+  <script src="./static/gametext.js"></script>
+  <script src="./static/hangman.js"></script>
+  <script src="./static/game.js"></script>
+
+  <!-- <script src="./static/hangman.js"></script> -->
+</html>
