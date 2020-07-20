@@ -19,25 +19,23 @@
     <link rel="stylesheet" href="hangman.css" />
   </head>
   <body>
-    <main>
-      <div id="stats">
-        <h1 class="game-text" id="lives"></h1>
-        <h1 class="game-text" id="alphabet"></h1>
-        <h1 class="game-text" id="length"></h1>
-        <h1 class="game-text" id="start"></h1>
-        <div class="alert alert-success" role="alert">
-          You win!
-        </div>
-        <div class="alert alert-danger" role="alert">
-          You lose!
-        </div>
+    <div id="stats">
+      <h1 class="game-text" id="lives"></h1>
+      <h1 class="game-text" id="alphabet"></h1>
+      <h1 class="game-text" id="length"></h1>
+      <h1 class="game-text" id="start"></h1>
+      <div class="alert alert-success" role="alert">
+        You win!
       </div>
-      <div id="game">
-        <h1 class="game-text" id="game-title">Hangman</h1>
-        <canvas id="canvas" width="600" height="600"></canvas>
-        <h1 class="game-text" id="current"></h1>
+      <div class="alert alert-danger" role="alert">
+        You lose!
       </div>
-    </main>
+    </div>
+    <div id="game">
+      <h1 class="game-text" id="game-title">Hangman</h1>
+      <canvas id="canvas" width="600" height="600"></canvas>
+      <h1 class="game-text" id="current"></h1>
+    </div>
   </body>
   <script src="draw.js"></script>
   <script src="gametext.js"></script>

@@ -2,16 +2,11 @@
 const lives = document.getElementById("lives");
 const alphabet = document.getElementById("alphabet");
 const current = document.getElementById("current");
-const startMsg = document.getElementById("start");
-const winMessage = $(".alert-success");
-const loseMessage = $(".alert-danger");
+const status = document.getElementById("status");
 const resetBtn = $(".reset");
 
-const toggleWinMsg = () => {
-  winMessage.hide();
-};
-const toggleLoseMsg = () => {
-  loseMessage.hide();
+const updateStatus = (updateString) => {
+  status.innerHTML = updateString;
 };
 
 //Function: Updates current state of the game in string format. Unguessed letters are = "_ ", Guessed letters are represented by themselves e.g. "j" = "j" . Empty space between words is represented with an "*".
