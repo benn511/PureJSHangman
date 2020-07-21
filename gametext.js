@@ -22,9 +22,14 @@ const updateGameText = (word, guesses) => {
     }
   }
   current.innerHTML = updatedString;
-  alphabet.innerHTML = "Current guesses: " + guesses;
+  alphabet.innerHTML = "Guesses: " + guesses;
   console.log(guesses);
 };
+
+//Function:
+function handleReset() {
+  //Reset
+}
 
 const showAnswer = (word) => {
   if (word) {
