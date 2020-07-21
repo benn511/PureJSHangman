@@ -22,6 +22,7 @@ class Page {
   }
   setAlphabet(guesses) {
     if (guesses) {
+      this.alphabet.innerHTML = "You have guessed: " + guesses;
       this.alphabet.innerHTML = `You have guessed ${guesses} so far...`;
     } else {
       console.log(`Invalid array passed: ${guesses} in Page.setAlphabet()`);

@@ -42,6 +42,22 @@ class Hangman {
   getNumLives() {
     return this.numLives;
   }
+  getGuesses() {
+    return this.guesses;
+  }
+  calculateCurrent() {
+    let currentString = "";
+    for (const letter of word) {
+      if (letter == " ") {
+        currentString += "* "; //Empty space
+      } else if (guesses.indexOf(letter) == -1) {
+        currentString += "_ "; //Unguessed
+      } else {
+        currentString += `${letter} `; //Self-Represented letter
+      }
+    }
+    return currentString;
+  }
   wordContains(letter) {
     /*Function goal: Check if current game word contains the letter being guessed */
     if (letter) {
