@@ -26,14 +26,14 @@
   <body class="grey darken-4">
     <!-- Title  -->
     <section class="container">
-      <h1 class="blue-text center">Hangman</h1>
+      <h1 class="blue-text center" id="title">Hangman</h1>
     </section>
     <!-- Game and associated game text  -->
     <section class="container section">
       <div class="row">
         <div class="col m12 m6 l6 pull-l3 xl6">
           <canvas id="canvas" width="600" height="600"></canvas>
-          <h1 class="game-text" id="current"></h1>
+          <h1 class="game-text white-text" id="current"></h1>
         </div>
         <div class="col m12 l4 center offset-l2">
           <div id="reset" class="blue darken-1 btn-floating btn-large">
@@ -42,7 +42,9 @@
           <p class="flow-text white-text game-status" id="status">
             Press any key to begin guessing...
           </p>
-          <i class="material-icons blue-text" id="lives"></i>
+          <i class="material-icons blue-text" id="lives"
+            >favorite favorite favorite favorite favorite favorite
+          </i>
           <p class="flow-text white-text" id="alphabet">
             Your guesses will appear here....
           </p>

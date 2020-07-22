@@ -47,10 +47,10 @@ class Hangman {
   }
   calculateCurrent() {
     let currentString = "";
-    for (const letter of word) {
+    for (const letter of this.word) {
       if (letter == " ") {
         currentString += "* "; //Empty space
-      } else if (guesses.indexOf(letter) == -1) {
+      } else if (this.guesses.indexOf(letter) == -1) {
         currentString += "_ "; //Unguessed
       } else {
         currentString += `${letter} `; //Self-Represented letter
@@ -86,11 +86,11 @@ class Hangman {
   numGuesses() {
     return this.guesses.length;
   }
+
   reset() {
     this.numLives = 6;
     this.guesses = [];
     this.word = this.gameWords[this.getRandomIndex()];
-    this.updateDrawing();
   }
   outOfLives() {
     return this.numLives === 0 ? true : false;

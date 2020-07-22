@@ -1,6 +1,7 @@
 class Page {
   constructor() {
     //Game stat Text elements
+    this.title = document.getElementById("title");
     this.lives = document.getElementById("lives");
     this.alphabet = document.getElementById("alphabet");
     this.current = document.getElementById("current");
@@ -8,11 +9,18 @@ class Page {
     //Game buttons
     this.resetBtn = document.getElementById("reset");
   }
+  setTitle(newTitle) {
+    if (typeof newTitle === "string") {
+      this.title.innerHTML = newTitle;
+    } else {
+      console.error(`Invalid type passed...Object passed: ${newTitle}`);
+    }
+  }
   setStatus(updateString) {
     this.status.innerHTML = updateString;
   }
   setCurrent(updatedString) {
-    if (updatedString) {
+    if (typeof updatedString === "string") {
       current.innerHTML = updatedString;
     } else {
       console.log(
@@ -29,7 +37,7 @@ class Page {
     }
   }
   setLives(numLives) {
-    if (numLives) {
+    if (numLives > -1) {
       let heartsHtml = "";
       for (let i = 0; i < numLives; i++) {
         heartsHtml += "favorite ";
@@ -39,18 +47,23 @@ class Page {
       console.log(`Invalid parameter: ${numLives}`);
     }
   }
+  update(Game) {
+    if (Game) {
+      page.setLives(Game.getNumLives());
+      page.setAlphabet(Game.getGuesses());
+      page.setCurrent(Game.calculateCurrent());
+    } else {
+      console.error(`Invalid param: ${Game}`);
+    }
+  }
 
-  resetPage(softReset, numLives) {
+  reset() {
     /*Function Goal: To reset all the html of the game page. 
     Function parameters: softReset is a boolean value indicating whether to keep the preserve the previous status of the game */
-    if (softReset == true) {
-      this.status.innerHTML += " Press any key to start a new game";
-    } else {
-      this.status.innerHTML = " Press any key to start a new game";
-    }
+    this.status.innerHTML += " Press any key to start a new game";
     this.alphabet.innerHTML = "Current guesses include: ";
-    this.lives.innerHTML = "favorite favorite favorite favorite favorite";
-    this.setLives(numLives);
+    this.lives.innerHTML =
+      "favorite favorite favorite favorite favorite favorite";
   }
   revealWord(word) {
     if (word) {
