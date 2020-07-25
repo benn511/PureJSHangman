@@ -1,6 +1,7 @@
+/*File handles bulk of game logic by creating instances of external classes.  */
 const Game = new Hangman();
-//Page class handles and updates any HTML text
 const page = new Page();
+let resetBtn = document.getElementById("reset");
 
 Game.updateDrawing();
 page.update(Game); //Init game page
@@ -38,7 +39,6 @@ const checkKey = (keyPressed) => {
 };
 window.addEventListener("keyup", checkKey, false);
 
-let resetBtn = document.getElementById("reset");
 resetBtn.addEventListener("click", function () {
   Game.reset();
   Game.updateDrawing();

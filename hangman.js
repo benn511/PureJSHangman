@@ -4,13 +4,13 @@ class Hangman {
     this.numLives = 6;
     this.guesses = [];
     this.gameWords = [
-      "HELLO WORLD",
-      "RUBY",
+      "FOO",
+      "JAVASCRIPT",
+      "REACT",
+      "NODE JS",
       "PYTHON",
       "JAVA",
-      "INTERVIEW",
-      "JAZZ",
-      "TRY ME",
+      "WEB",
     ];
     this.word = this.gameWords[this.getRandomIndex()];
   }

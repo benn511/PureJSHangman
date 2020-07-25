@@ -1,3 +1,4 @@
+/*Summary: Page class handles any game changes besides the canvas redrawing. This includes updating the number of lives left, title, or current status.  */
 class Page {
   constructor() {
     //Game stat Text elements
